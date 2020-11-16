@@ -14,13 +14,17 @@ Module.register("MMM-Image-Carousel", {
         // Create container
         var container = document.createElement('div')
 
+        // Set timestamp
+        var date = new Date();
+        var timestamp = date.getTime();
+
         // Get image
         var image = this.config.images[ this.imageIndex ]
 
         // Create element
         var div = document.createElement('div')
         
-        div.innerHTML = `<img src="${ image.url }" alt="${ image.name }" style="max-width: 400px;">`
+        div.innerHTML = `<img src="${ image.url + '?' + timestamp }" alt="${ image.name }" style="max-width: 400px;">`
 
         container.appendChild( div )
 
